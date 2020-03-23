@@ -1,4 +1,5 @@
 # interfaceC
-Projet de l'electif correspondant
 
-Projet demandé pour l'électif "Programmation des interfaces graphiques en C++"
+l'objectif de ce projet est de programmer une version du jeu 2048
+
+Projet effectué par les élèves Lionel Li et Séraphin Lhullier
