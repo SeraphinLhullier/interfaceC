@@ -133,10 +133,12 @@ Window {
 
     Frame {
         id: frame
-        x: 247
-        y: 80
+        x: 232
+        y: 0
         width: 176
         height: 176
+        hoverEnabled: true
+        enabled: true
 
         Button {
             id: button_up
@@ -144,7 +146,7 @@ Window {
             y: 0
             width: parent.width/3
             height: parent.height/3
-            text: qsTr("Button")
+            text: qsTr("Haut")
 
             Image {
                 x: 0
@@ -163,7 +165,7 @@ Window {
             y: (parent.height-height)/2
             width: parent.width/3
             height: parent.height/3
-            text: qsTr("Button")
+            text: qsTr("Droite")
 
             Image {
                 x: 0
@@ -183,7 +185,7 @@ Window {
             y: parent.height-height
             width: parent.width/3
             height: parent.height/3
-            text: qsTr("Button")
+            text: qsTr("Bas")
 
             Image {
                 x: 0
@@ -203,7 +205,7 @@ Window {
             y: (parent.height-height)/2
             width: parent.width/3
             height: parent.height/3
-            text: qsTr("Button")
+            text: qsTr("Gauche")
 
             Image {
                 x: 0
