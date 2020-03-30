@@ -3,11 +3,12 @@ import QtQuick 2.0
 Item {
     width: 50
     height: 50
+    property alias rectangleColor: rectangle.color
     property alias elementText: element.text
 
     Rectangle {
         id: rectangle
-        color: "#8f5902"
+        color: "#e9b96e"
         anchors.fill: parent
 
         Text {
@@ -15,7 +16,6 @@ Item {
             width: 100
             height: 100
             color: "#f6dcb0"
-            text: qsTr("")
             font.bold: true
             textFormat: Text.AutoText
             lineHeight: 1
