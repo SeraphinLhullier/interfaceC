@@ -133,8 +133,8 @@ Window {
 
     Frame {
         id: frame
-        x: 220
-        y: 79
+        x: 247
+        y: 80
         width: 176
         height: 176
 

@@ -31,4 +31,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Tuile.qml \
+<<<<<<< HEAD
+    images/bouton_up.png
+=======
     tuileCreation.js
+>>>>>>> 8ade513b5f2aad68a76b52ce38decaf689034882
