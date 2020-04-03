@@ -1,11 +1,13 @@
 #ifndef JEU_H
 #define JEU_H
 
-
 class Jeu
 {
 public:
     Jeu(int lignes,int colonnes);
+    ~Jeu();
+
+    void print();
     void get_tab();
     void ajouter_tuile();
     void deplacer_droite();

@@ -1,6 +1,7 @@
 #include "tuile.h"
 
-tuile::tuile()
+Tuile::Tuile(int nombre)
 {
-
+    val = nombre;
+    change = false;
 }

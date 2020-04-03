@@ -8,9 +8,8 @@ public:
     Tuile(int nombre);
 
 private:
-    int pos_x;
-    int pos_y;
     int val;
+    bool change;
 };
 
 #endif // TUILE_H

@@ -10,6 +10,16 @@ Window {
     height: 840
     color: "#e9b96e"
     title: qsTr("Hello Warudo")
+    Keys.onPressed: {
+     switch (event.key) {
+     case Qt.Key_Up:
+     cout << "haut";
+     break;
+     case Qt.Key_Down:
+     cout << "bas"
+     break;
+     }
+    }
 
     Rectangle {
         id: rectangle
