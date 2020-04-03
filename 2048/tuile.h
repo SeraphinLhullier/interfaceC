@@ -2,10 +2,15 @@
 #define TUILE_H
 
 
-class tuile
+class Tuile
 {
 public:
-    tuile();
+    Tuile(int nombre);
+
+private:
+    int pos_x;
+    int pos_y;
+    int val;
 };
 
 #endif // TUILE_H

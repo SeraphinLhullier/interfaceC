@@ -13,8 +13,8 @@ Window {
 
     Rectangle {
         id: rectangle
-        width: 500
-        height: 500
+        width: 500/640*parent.width
+        height: width
         color: "#c17d11"
         anchors.verticalCenterOffset: 100
         anchors.verticalCenter: parent.verticalCenter
@@ -146,7 +146,7 @@ Window {
             y: 0
             width: parent.width/3
             height: parent.height/3
-            text: qsTr("Haut")
+            //text: qsTr("Haut")
 
             Image {
                 x: 0
@@ -165,7 +165,7 @@ Window {
             y: (parent.height-height)/2
             width: parent.width/3
             height: parent.height/3
-            text: qsTr("Droite")
+            //text: qsTr("Droite")
 
             Image {
                 x: 0
@@ -185,7 +185,7 @@ Window {
             y: parent.height-height
             width: parent.width/3
             height: parent.height/3
-            text: qsTr("Bas")
+            //text: qsTr("Bas")
 
             Image {
                 x: 0
@@ -205,7 +205,7 @@ Window {
             y: (parent.height-height)/2
             width: parent.width/3
             height: parent.height/3
-            text: qsTr("Gauche")
+            //text: qsTr("Gauche")
 
             Image {
                 x: 0
