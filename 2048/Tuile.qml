@@ -1,36 +1,82 @@
-import QtQuick 2.0
+import QtQuick 2.2
 
-Item {
-    width: 50
-    height: 50
-    property alias rectangleColor: rectangle.color
-    property alias elementText: element.text
+Rectangle {
+    id: tuile
+    width: 425/4
+    height: 425/4
+    radius: 3
+    color: "white"
+    property string tuileText: ""
+    property int tileFontSize: 55
+    property color tileColor: "black"
+    property int moveAnimTime: 100
+    property int newTileAnimTime: 200
+    property bool runNewTileAnim: false
+    property bool destroyFlag: false
 
-    Rectangle {
-        id: rectangle
-        color: "#e9b96e"
-        anchors.fill: parent
 
-        Text {
-            id: element
-            width: 100
-            height: 100
-            color: "#f6dcb0"
-            font.bold: true
-            textFormat: Text.AutoText
-            lineHeight: 1
-            fontSizeMode: Text.FixedSize
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignHCenter
-            anchors.fill: parent
-            font.pixelSize: 22
+    Text {
+        id: tileLabel
+        text: tuileText
+        color: tileColor
+        font.family: localFont.name
+        font.pixelSize: tileFontSize
+        font.bold: true
+        anchors.centerIn: parent
+        Behavior on text {
+            PropertyAnimation { target: tuile
+                property: "opacity"
+                from: 0.5
+                to: 1
+                duration: moveAnimTime
+            }
         }
     }
 
-}
+    ParallelAnimation {
+        running: runNewTileAnim
+        NumberAnimation {
+            target: tuile
+            property: "opacity"
+            from: 0.0
+            to: 1.0
+            duration: newTileAnimTime
+        }
 
-/*##^##
-Designer {
-    D{i:1;anchors_height:200;anchors_width:200;anchors_x:31;anchors_y:21}
+        ScaleAnimator {
+            target: tuile
+            from: 0
+            to: 1
+            duration: newTileAnimTime
+            easing.type: Easing.OutQuad
+        }
+    }
+
+    Behavior on color {
+        ColorAnimation {
+            duration: moveAnimTime
+        }
+    }
+
+    Behavior on y {
+        NumberAnimation {
+            duration: moveAnimTime
+            onRunningChanged: {
+                if ((!running) && destroyFlag) {
+                    tuile.destroy();
+                }
+            }
+        }
+    }
+
+    Behavior on x {
+        NumberAnimation {
+            duration: moveAnimTime
+            onRunningChanged: {
+                if ((!running) && destroyFlag) {
+                    tuile.destroy();
+                }
+            }
+        }
+    }
 }
-##^##*/

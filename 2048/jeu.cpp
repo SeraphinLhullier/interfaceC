@@ -3,7 +3,7 @@
 #include <iostream>
 #include <iomanip>
 
-Jeu::Jeu(int lignes, int colonnes)
+Jeu::Jeu(int lignes, int colonnes, QObject *parent) : QObject(parent)
 {
     nb_lignes = lignes;
     nb_colonnes = colonnes;

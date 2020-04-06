@@ -9,18 +9,10 @@ Window {
     width: 640
     height: 840
     color: "#f6dcb8"
+    property alias t11Text: t11.text
     property alias scoreText: score.text
-    title: qsTr("Hello Warudo")
-    Keys.onPressed: {
-        switch (event.key) {
-        case Qt.Key_Up:
-            cout << "haut";
-            break;
-        case Qt.Key_Down:
-            cout << "bas"
-            break;
-        }
-    }
+    title: qsTr("2048 par LI et Lhullier")
+
 
     Rectangle {
         id: board
@@ -31,6 +23,17 @@ Window {
         anchors.verticalCenterOffset: 100
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
+        focus: true
+        Keys.onPressed: {
+            switch (event.key){
+                case Qt.Key_Up:
+                    jeu.print();
+                    break;
+                case Qt.Key_Down:
+                    jeu.print();
+                    break;
+            }
+        }
 
         Rectangle {
             id: case11
@@ -43,6 +46,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: parent.top
             anchors.topMargin: 20
+
+            Text {
+                id: t11
+                color: "#5b3902"
+                font.bold: true
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                anchors.fill: parent
+                font.pixelSize: 40
+                text: qsTr("")
+            }
         }
 
         Rectangle {
@@ -55,6 +69,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: parent.top
             anchors.topMargin: 20
+
+            Text {
+                id: t12
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -67,6 +92,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: parent.top
             anchors.topMargin: 20
+
+            Text {
+                id: t13
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -80,6 +116,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: parent.top
             anchors.topMargin: 20
+
+            Text {
+                id: t14
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -92,6 +139,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case11.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t21
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -104,6 +162,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case12.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t22
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -116,6 +185,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case13.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t23
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -128,6 +208,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case14.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t24
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -140,6 +231,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case21.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t31
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -152,6 +254,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case22.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t32
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -164,6 +277,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case23.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t33
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -176,6 +300,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case24.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t34
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -188,6 +323,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case31.bottom
             anchors.topMargin: 10
+
+            Text {
+                id: t41
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -200,6 +346,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case32.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t42
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -212,6 +369,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case33.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t43
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
         Rectangle {
@@ -224,6 +392,17 @@ Window {
             anchors.leftMargin: 20
             anchors.top: case34.bottom
             anchors.topMargin: 20
+
+            Text {
+                id: t44
+                color: "#5b3902"
+                text: qsTr("")
+                font.pixelSize: 40
+                font.bold: true
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+            }
         }
 
 
@@ -350,6 +529,12 @@ Window {
         }
     }
 
+    Item {
+        id: allwind
+        anchors.fill: parent
+
+    }
+
 
 }
 
@@ -357,11 +542,11 @@ Window {
 
 /*##^##
 Designer {
-    D{i:2;anchors_width:100}D{i:3;anchors_x:2;anchors_y:7}D{i:4;anchors_width:100;anchors_x:9;anchors_y:-6}
-D{i:5;anchors_width:100;anchors_x:0;anchors_y:-2}D{i:6;anchors_x:-4;anchors_y:4}D{i:7;anchors_x:-8;anchors_y:1}
-D{i:8;anchors_x:-6;anchors_y:7}D{i:9;anchors_x:-6;anchors_y:1}D{i:10;anchors_x:0;anchors_y:10}
-D{i:11;anchors_x:4;anchors_y:19}D{i:12;anchors_x:-4;anchors_y:8}D{i:13;anchors_x:7;anchors_y:13}
-D{i:14;anchors_x:8;anchors_y:19}D{i:15;anchors_x:1;anchors_y:26}D{i:16;anchors_x:16;anchors_y:14}
-D{i:17;anchors_x:16;anchors_y:17}
+    D{i:2;anchors_width:100}D{i:4;anchors_x:2;anchors_y:7}D{i:6;anchors_width:100;anchors_x:9;anchors_y:"-6"}
+D{i:8;anchors_width:100;anchors_x:0;anchors_y:"-2"}D{i:10;anchors_x:"-4";anchors_y:4}
+D{i:12;anchors_x:"-8";anchors_y:1}D{i:14;anchors_x:"-6";anchors_y:7}D{i:16;anchors_x:"-6";anchors_y:1}
+D{i:18;anchors_x:0;anchors_y:10}D{i:20;anchors_x:4;anchors_y:19}D{i:22;anchors_x:"-4";anchors_y:8}
+D{i:24;anchors_x:7;anchors_y:13}D{i:26;anchors_x:8;anchors_y:19}D{i:28;anchors_x:1;anchors_y:26}
+D{i:30;anchors_x:16;anchors_y:14}D{i:32;anchors_x:16;anchors_y:17}D{i:46;anchors_height:200;anchors_width:200}
 }
 ##^##*/
