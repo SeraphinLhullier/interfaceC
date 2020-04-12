@@ -37,6 +37,10 @@ public:
     Q_INVOKABLE void deplacer_gauche();
     Q_INVOKABLE void deplacer_haut();
     Q_INVOKABLE void deplacer_bas();
+    Q_INVOKABLE void dep_droite();
+    Q_INVOKABLE void dep_gauche();
+    Q_INVOKABLE void dep_haut();
+    Q_INVOKABLE void dep_bas();
     Q_INVOKABLE bool verifier_bas();
     Q_INVOKABLE bool verifier_haut();
     Q_INVOKABLE bool verifier_gauche();

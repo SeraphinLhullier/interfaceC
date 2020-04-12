@@ -409,16 +409,16 @@ Window {
         Keys.onPressed: {
             switch (event.key){
                 case Qt.Key_Up:
-                    jeu.deplacer_haut();
+                    jeu.dep_haut();
                     break;
                 case Qt.Key_Down:
-                    jeu.deplacer_bas();
+                    jeu.dep_bas();
                     break;
                 case Qt.Key_Left:
-                    jeu.deplacer_gauche();
+                    jeu.dep_gauche();
                     break;
                 case Qt.Key_Right:
-                    jeu.deplacer_droite();
+                    jeu.dep_droite();
                     break;
             }
         }
@@ -430,7 +430,7 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Haut")
-            onClicked: jeu.deplacer_haut()
+            onClicked: jeu.dep_haut()
 
             Image {
                 x: 0
@@ -450,7 +450,7 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Droite")
-            onClicked: jeu.deplacer_droite()
+            onClicked: jeu.dep_droite()
 
             Image {
                 x: 0
@@ -471,7 +471,7 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Bas")
-            onClicked: jeu.deplacer_bas()
+            onClicked: jeu.dep_bas()
 
             Image {
                 x: 0
@@ -492,7 +492,7 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Gauche")
-            onClicked: jeu.deplacer_gauche()
+            onClicked: jeu.dep_gauche()
 
             Image {
                 x: 0

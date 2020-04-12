@@ -139,8 +139,6 @@ void Jeu::deplacer_haut(){
         for (int j = 0; j < nb_colonnes ; j++)
             if (tab[i][j]%2==1)
                 tab[i][j]--;
-    ajouter_tuile();
-    changed();
 }
 
 void Jeu::deplacer_bas(){
@@ -160,8 +158,6 @@ void Jeu::deplacer_bas(){
         for (int j = 0; j < nb_colonnes ; j++)
             if (tab[i][j]%2==1)
                 tab[i][j]--;
-    ajouter_tuile();
-    changed();
 }
 
 void Jeu::deplacer_gauche(){
@@ -181,8 +177,6 @@ void Jeu::deplacer_gauche(){
         for (int j = 0; j < nb_colonnes ; j++)
             if (tab[i][j]%2==1)
                 tab[i][j]--;
-    ajouter_tuile();
-    changed();
 }
 
 void Jeu::deplacer_droite(){
@@ -202,8 +196,38 @@ void Jeu::deplacer_droite(){
         for (int j = 0; j < nb_colonnes ; j++)
             if (tab[i][j]%2==1)
                 tab[i][j]--;
-    ajouter_tuile();
-    changed();
+}
+
+void Jeu::dep_bas(){
+    if(verifier_bas()){
+        deplacer_bas();
+        ajouter_tuile();
+        changed();
+    }
+}
+
+void Jeu::dep_haut(){
+    if(verifier_haut()){
+        deplacer_haut();
+        ajouter_tuile();
+        changed();
+    }
+}
+
+void Jeu::dep_droite(){
+    if(verifier_droite()){
+        deplacer_droite();
+        ajouter_tuile();
+        changed();
+    }
+}
+
+void Jeu::dep_gauche(){
+    if(verifier_gauche()){
+        deplacer_gauche();
+        ajouter_tuile();
+        changed();
+    }
 }
 
 int Jeu::get_tab(int x,int y){
