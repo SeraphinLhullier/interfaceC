@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     Jeu jeu(4,4);
-    jeu.ajouter_tuile();
+    jeu.dep_bas();
 //    j.print();
 //    for (int i = 0 ; i<1000; i++){
 //        j.deplacer_droite();

@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <vector>
 
 
 class Jeu : public QObject
@@ -45,6 +46,10 @@ public:
     Q_INVOKABLE bool verifier_haut();
     Q_INVOKABLE bool verifier_gauche();
     Q_INVOKABLE bool verifier_droite();
+    void sauvegarder();
+    Q_INVOKABLE void prec();
+    Q_INVOKABLE void suiv();
+    void copie(int** a, int** b);
 
     QString readc11();
     QString readc12();
@@ -68,6 +73,8 @@ signals:
 
 private:
     int **tab;
+    size_t pos;
+    std::vector<int**> hist;
     int nb_lignes;
     int nb_colonnes;
 

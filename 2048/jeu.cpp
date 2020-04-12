@@ -7,6 +7,7 @@ Jeu::Jeu(int lignes, int colonnes, QObject *parent) : QObject(parent)
 {
     nb_lignes = lignes;
     nb_colonnes = colonnes;
+    pos = -1;
     tab = new int* [nb_lignes];
     for (int i = 0; i< nb_lignes; i++)
         tab[i]=new int[nb_colonnes];
@@ -16,8 +17,11 @@ Jeu::Jeu(int lignes, int colonnes, QObject *parent) : QObject(parent)
             tab[i][j] = 0;
 
     ajouter_tuile();
-    changed();
+    ajouter_tuile();
+
+    sauvegarder();
 }
+
 
 
 Jeu::~Jeu() {
@@ -30,6 +34,31 @@ Jeu::~Jeu() {
     nb_colonnes = 0;
 }
 
+
+void Jeu::copie(int **a, int **b){
+    for (int i = 0 ; i < nb_lignes ; i++)
+        for (int j = 0 ; j < nb_colonnes ; j++)
+            a[i][j] = b[i][j];
+}
+
+void Jeu::sauvegarder(){
+    int** sauv;
+    sauv = new int* [nb_lignes];
+    for (int i = 0; i< nb_lignes; i++)
+        sauv[i]=new int[nb_colonnes];
+
+    copie(sauv,tab);
+    while (pos<hist.size()-1) {
+        hist.pop_back();
+    }
+
+    hist.push_back(sauv);
+    pos++;
+
+    changed();
+
+    std::cout <<std::endl << hist.size() << "     " << pos;
+}
 
 void Jeu::print()
 {
@@ -202,7 +231,7 @@ void Jeu::dep_bas(){
     if(verifier_bas()){
         deplacer_bas();
         ajouter_tuile();
-        changed();
+        sauvegarder();
     }
 }
 
@@ -210,7 +239,7 @@ void Jeu::dep_haut(){
     if(verifier_haut()){
         deplacer_haut();
         ajouter_tuile();
-        changed();
+        sauvegarder();
     }
 }
 
@@ -218,7 +247,7 @@ void Jeu::dep_droite(){
     if(verifier_droite()){
         deplacer_droite();
         ajouter_tuile();
-        changed();
+        sauvegarder();
     }
 }
 
@@ -226,7 +255,26 @@ void Jeu::dep_gauche(){
     if(verifier_gauche()){
         deplacer_gauche();
         ajouter_tuile();
+        sauvegarder();
+    }
+}
+
+void Jeu::prec(){
+    if (pos >0){
+        pos--;
+        copie(tab,hist[pos]);
         changed();
+        std::cout <<std::endl << hist.size() << "     " << pos;
+    }
+}
+
+void Jeu::suiv(){
+    if (pos < hist.size()-1){
+        pos++;
+        copie(tab,hist[pos]);
+        changed();
+
+        std::cout <<std::endl << hist.size() << "     " << pos;
     }
 }
 

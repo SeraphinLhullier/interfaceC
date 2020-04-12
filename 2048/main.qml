@@ -450,7 +450,8 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Droite")
-            onClicked: jeu.dep_droite()
+            //onClicked: jeu.dep_droite()
+            onClicked: jeu.suiv()
 
             Image {
                 x: 0
@@ -492,7 +493,8 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Gauche")
-            onClicked: jeu.dep_gauche()
+            //onClicked: jeu.dep_gauche()
+            onClicked: jeu.prec()
 
             Image {
                 x: 0
