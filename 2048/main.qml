@@ -9,7 +9,6 @@ Window {
     width: 640
     height: 840
     color: "#f6dcb8"
-    property alias t11Text: t11.text
     property alias scoreText: score.text
     title: qsTr("2048 par LI et Lhullier")
 
@@ -27,10 +26,16 @@ Window {
         Keys.onPressed: {
             switch (event.key){
                 case Qt.Key_Up:
-                    jeu.print();
+                    jeu.deplacer_haut();
                     break;
                 case Qt.Key_Down:
-                    jeu.print();
+                    jeu.deplacer_bas();
+                    break;
+                case Qt.Key_Left:
+                    jeu.deplacer_gauche();
+                    break;
+                case Qt.Key_Right:
+                    jeu.deplacer_droite();
                     break;
             }
         }
@@ -55,7 +60,7 @@ Window {
                 horizontalAlignment: Text.AlignHCenter
                 anchors.fill: parent
                 font.pixelSize: 40
-                text: qsTr("")
+                text: jeu.c11
             }
         }
 
@@ -73,7 +78,7 @@ Window {
             Text {
                 id: t12
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c12
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -96,7 +101,7 @@ Window {
             Text {
                 id: t13
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c13
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -120,7 +125,7 @@ Window {
             Text {
                 id: t14
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c14
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -143,7 +148,7 @@ Window {
             Text {
                 id: t21
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c21
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -166,7 +171,7 @@ Window {
             Text {
                 id: t22
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c22
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -189,7 +194,7 @@ Window {
             Text {
                 id: t23
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c23
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -212,7 +217,7 @@ Window {
             Text {
                 id: t24
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c24
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -235,7 +240,7 @@ Window {
             Text {
                 id: t31
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c31
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -258,7 +263,7 @@ Window {
             Text {
                 id: t32
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c32
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -281,7 +286,7 @@ Window {
             Text {
                 id: t33
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c33
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -304,7 +309,7 @@ Window {
             Text {
                 id: t34
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c34
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -327,7 +332,7 @@ Window {
             Text {
                 id: t41
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c41
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -350,7 +355,7 @@ Window {
             Text {
                 id: t42
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c42
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -373,7 +378,7 @@ Window {
             Text {
                 id: t43
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c43
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
@@ -396,7 +401,7 @@ Window {
             Text {
                 id: t44
                 color: "#5b3902"
-                text: qsTr("")
+                text: jeu.c44
                 font.pixelSize: 40
                 font.bold: true
                 anchors.fill: parent
