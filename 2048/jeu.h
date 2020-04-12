@@ -31,7 +31,7 @@ public:
 
 
     Q_INVOKABLE void print();
-//    Q_INVOKABLE void get_tab();
+    Q_INVOKABLE int get_tab(int x, int y);
     Q_INVOKABLE void ajouter_tuile();
     Q_INVOKABLE void deplacer_droite();
     Q_INVOKABLE void deplacer_gauche();

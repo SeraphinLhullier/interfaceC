@@ -16,6 +16,7 @@ Jeu::Jeu(int lignes, int colonnes, QObject *parent) : QObject(parent)
             tab[i][j] = 0;
 
     ajouter_tuile();
+    changed();
 }
 
 
@@ -205,106 +206,111 @@ void Jeu::deplacer_droite(){
     changed();
 }
 
+int Jeu::get_tab(int x,int y){
+    return tab[x-1][y-1];
+}
+
+
 QString Jeu::readc11(){
-    if(tab[1][1]!=0)
-        return QString::number(tab[1][1]);
+    if(get_tab(1,1)!=0)
+        return QString::number(get_tab(1,1));
     else
-        return QString::Null();
+        return QString("");
 }
 
 QString Jeu::readc12(){
-    if(tab[1][2]!=0)
-        return QString::number(tab[1][2]);
+    if(get_tab(1,2)!=0)
+        return QString::number(get_tab(1,2));
     else
-        return QString::Null();
+        return QString("");
 }
 QString Jeu::readc13(){
-    if(tab[1][3]!=0)
-        return QString::number(tab[1][3]);
+    if(get_tab(1,3)!=0)
+        return QString::number(get_tab(1,3));
     else
-        return QString::Null();
+        return QString("");
 }
 QString Jeu::readc14(){
-    if(tab[1][4]!=0)
-        return QString::number(tab[1][4]);
+    if(get_tab(1,4)!=0)
+        return QString::number(get_tab(1,4));
     else
-        return QString::Null();
+        return QString("");
 }
 
 QString Jeu::readc21(){
-    if(tab[2][1]!=0)
-        return QString::number(tab[2][1]);
+    if(get_tab(2,1)!=0)
+        return QString::number(get_tab(2,1));
     else
-        return QString::Null();
+        return QString("");
 }
 
 QString Jeu::readc22(){
-    if(tab[2][2]!=0)
-        return QString::number(tab[2][2]);
+    if(get_tab(2,2)!=0)
+        return QString::number(get_tab(2,2));
     else
-        return QString::Null();
+        return QString("");
 }
 QString Jeu::readc23(){
-    if(tab[2][3]!=0)
-        return QString::number(tab[2][3]);
+    if(get_tab(2,3)!=0)
+        return QString::number(get_tab(2,3));
     else
-        return QString::Null();
+        return QString("");
 }
 QString Jeu::readc24(){
-    if(tab[2][4]!=0)
-        return QString::number(tab[2][4]);
+    if(get_tab(2,4)!=0)
+        return QString::number(get_tab(2,4));
     else
-        return QString::Null();
+        return QString("");
 }
 
 QString Jeu::readc31(){
-    if(tab[3][1]!=0)
-        return QString::number(tab[3][1]);
+    if(get_tab(3,1)!=0)
+        return QString::number(get_tab(3,1));
     else
-        return QString::Null();
+        return QString("");
 }
 
 QString Jeu::readc32(){
-    if(tab[3][2]!=0)
-        return QString::number(tab[3][2]);
+    if(get_tab(3,2)!=0)
+        return QString::number(get_tab(3,2));
     else
-        return QString::Null();
+        return QString("");
 }
 QString Jeu::readc33(){
-    if(tab[3][3]!=0)
-        return QString::number(tab[3][3]);
+    if(get_tab(3,3)!=0)
+        return QString::number(get_tab(3,3));
     else
-        return QString::Null();
+        return QString("");
 }
 QString Jeu::readc34(){
-    if(tab[3][4]!=0)
-        return QString::number(tab[3][4]);
+    if(get_tab(3,4)!=0)
+        return QString::number(get_tab(3,4));
     else
-        return QString::Null();
+        return QString("");
 }
 
 QString Jeu::readc41(){
-    if(tab[4][1]!=0)
-        return QString::number(tab[4][1]);
+    if(get_tab(4,1)!=0)
+        return QString::number(get_tab(4,1));
     else
-        return QString::Null();
+        return QString("");
 }
 
 QString Jeu::readc42(){
-    if(tab[4][2]!=0)
-        return QString::number(tab[4][2]);
+    if(get_tab(4,2)!=0)
+        return QString::number(get_tab(4,2));
     else
-        return QString::Null();
+        return QString("");
 }
 QString Jeu::readc43(){
-    if(tab[4][3]!=0)
-        return QString::number(tab[4][3]);
+    if(get_tab(4,3)!=0)
+        return QString::number(get_tab(4,3));
     else
-        return QString::Null();
+        return QString("");
 }
 QString Jeu::readc44(){
-    if(tab[4][4]!=0)
-        return QString::number(tab[4][4]);
+    if(get_tab(4,4)!=0)
+        return QString::number(get_tab(4,4));
     else
-        return QString::Null();
+        return QString("");
 }

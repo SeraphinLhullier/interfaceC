@@ -22,23 +22,7 @@ Window {
         anchors.verticalCenterOffset: 100
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
-        focus: true
-        Keys.onPressed: {
-            switch (event.key){
-                case Qt.Key_Up:
-                    jeu.deplacer_haut();
-                    break;
-                case Qt.Key_Down:
-                    jeu.deplacer_bas();
-                    break;
-                case Qt.Key_Left:
-                    jeu.deplacer_gauche();
-                    break;
-                case Qt.Key_Right:
-                    jeu.deplacer_droite();
-                    break;
-            }
-        }
+
 
         Rectangle {
             id: case11
@@ -327,7 +311,7 @@ Window {
             anchors.left: parent.left
             anchors.leftMargin: 20
             anchors.top: case31.bottom
-            anchors.topMargin: 10
+            anchors.topMargin: 20
 
             Text {
                 id: t41
@@ -421,6 +405,23 @@ Window {
         height: 176
         hoverEnabled: true
         enabled: true
+        focus: true
+        Keys.onPressed: {
+            switch (event.key){
+                case Qt.Key_Up:
+                    jeu.deplacer_haut();
+                    break;
+                case Qt.Key_Down:
+                    jeu.deplacer_bas();
+                    break;
+                case Qt.Key_Left:
+                    jeu.deplacer_gauche();
+                    break;
+                case Qt.Key_Right:
+                    jeu.deplacer_droite();
+                    break;
+            }
+        }
 
         Button {
             id: button_up
@@ -429,6 +430,7 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Haut")
+            onClicked: jeu.deplacer_haut()
 
             Image {
                 x: 0
@@ -448,6 +450,7 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Droite")
+            onClicked: jeu.deplacer_droite()
 
             Image {
                 x: 0
@@ -468,6 +471,7 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Bas")
+            onClicked: jeu.deplacer_bas()
 
             Image {
                 x: 0
@@ -488,6 +492,7 @@ Window {
             width: parent.width/3
             height: parent.height/3
             //text: qsTr("Gauche")
+            onClicked: jeu.deplacer_gauche()
 
             Image {
                 x: 0

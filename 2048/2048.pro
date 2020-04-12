@@ -32,8 +32,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    Tuile.qml \
-    tuileCreation.js
+    Tuile.qml
 
 HEADERS += \
     jeu.h \
