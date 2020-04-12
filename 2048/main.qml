@@ -4,6 +4,7 @@ import QtQuick.Controls 2.3
 
 
 Window {
+
     id: window
     visible: true
     width: 640
@@ -11,6 +12,8 @@ Window {
     color: "#f6dcb8"
     property alias scoreText: score.text
     title: qsTr("2048 par LI et Lhullier")
+    maximumHeight: height
+    maximumWidth: width
 
 
     Rectangle {
@@ -397,122 +400,10 @@ Window {
 
     }
 
-    Frame {
-        id: frame
-        x: 394
-        y: 57
-        width: 176
-        height: 176
-        hoverEnabled: true
-        enabled: true
-        focus: true
-        Keys.onPressed: {
-            switch (event.key){
-                case Qt.Key_Up:
-                    jeu.dep_haut();
-                    break;
-                case Qt.Key_Down:
-                    jeu.dep_bas();
-                    break;
-                case Qt.Key_Left:
-                    jeu.dep_gauche();
-                    break;
-                case Qt.Key_Right:
-                    jeu.dep_droite();
-                    break;
-            }
-        }
-
-        Button {
-            id: button_up
-            x: (parent.width-width)/2
-            y: 0
-            width: parent.width/3
-            height: parent.height/3
-            //text: qsTr("Haut")
-            onClicked: jeu.dep_haut()
-
-            Image {
-                x: 0
-                y: 0
-                id: image_up
-                width: parent.width
-                height: parent.height
-                fillMode: Image.PreserveAspectFit
-                source: "images/bouton_up.png"
-            }
-        }
-
-        Button {
-            id: button_right
-            x: parent.width - width
-            y: (parent.height-height)/2
-            width: parent.width/3
-            height: parent.height/3
-            //text: qsTr("Droite")
-            //onClicked: jeu.dep_droite()
-            onClicked: jeu.suiv()
-
-            Image {
-                x: 0
-                y: 0
-                id: image_right
-                width: parent.width
-                height: parent.height
-                rotation: 90
-                fillMode: Image.PreserveAspectFit
-                source: "images/bouton_up.png"
-            }
-        }
-
-        Button {
-            id: button_down
-            x: (parent.width-width)/2
-            y: parent.height-height
-            width: parent.width/3
-            height: parent.height/3
-            //text: qsTr("Bas")
-            onClicked: jeu.dep_bas()
-
-            Image {
-                x: 0
-                y: 0
-                id: image_down
-                width: parent.width
-                height: parent.height
-                rotation: 180
-                fillMode: Image.PreserveAspectFit
-                source: "images/bouton_up.png"
-            }
-        }
-
-        Button {
-            id: button_left
-            x: 0
-            y: (parent.height-height)/2
-            width: parent.width/3
-            height: parent.height/3
-            //text: qsTr("Gauche")
-            //onClicked: jeu.dep_gauche()
-            onClicked: jeu.prec()
-
-            Image {
-                x: 0
-                y: 0
-                id: image_left
-                width: parent.width
-                height: parent.height
-                rotation: -90
-                fillMode: Image.PreserveAspectFit
-                source: "images/bouton_up.png"
-            }
-        }
-    }
-
     Rectangle {
         id: scoreboard
-        x: 270
-        y: 115
+        x: 534
+        y: 5
         width: 100
         height: 60
         color: "#c17d11"
@@ -541,24 +432,196 @@ Window {
         }
     }
 
-    Item {
-        id: allwind
-        anchors.fill: parent
+    Rectangle {
+        id: boutons
+        x: 0
+        y: 64
+        width: 640
+        height: 200
+        color: "#00000000"
+        clip: false
+        opacity: 1
+        visible: true
+        layer.textureSize.height: 1
+        layer.textureSize.width: 1
+        enabled: true
 
+        focus: true
+        Keys.onPressed: {
+            switch (event.key){
+            case Qt.Key_Up:
+                jeu.dep_haut();
+                break;
+            case Qt.Key_Down:
+                jeu.dep_bas();
+                break;
+            case Qt.Key_Left:
+                jeu.dep_gauche();
+                break;
+            case Qt.Key_Right:
+                jeu.dep_droite();
+                break;
+            }
+        }
+
+
+
+        Rectangle {
+            id: croix_dir
+            x: parent.width-width
+            y: (parent.height - height)/2
+            width: 176
+            height: 176
+            color: "#00000000"
+            //hoverEnabled: true
+            enabled: true
+            //focus: true
+
+            Button {
+                id: button_up
+                x: (parent.width-width)/2
+                y: 0
+                width: parent.width/3
+                height: parent.height/3
+                //text: qsTr("Haut")
+                onClicked: jeu.dep_haut()
+
+                Image {
+                    x: 0
+                    y: 0
+                    id: image_up
+                    width: parent.width
+                    height: parent.height
+                    fillMode: Image.PreserveAspectFit
+                    source: "images/bouton_up.png"
+                }
+            }
+
+            Button {
+                id: button_right
+                x: parent.width - width
+                y: (parent.height-height)/2
+                width: parent.width/3
+                height: parent.height/3
+                //text: qsTr("Droite")
+                onClicked: jeu.dep_droite()
+
+
+                Image {
+                    x: 0
+                    y: 0
+                    id: image_right
+                    width: parent.width
+                    height: parent.height
+                    rotation: 90
+                    fillMode: Image.PreserveAspectFit
+                    source: "images/bouton_up.png"
+                }
+            }
+
+            Button {
+                id: button_down
+                x: (parent.width-width)/2
+                y: parent.height-height
+                width: parent.width/3
+                height: parent.height/3
+                //text: qsTr("Bas")
+                onClicked: jeu.dep_bas()
+
+                Image {
+                    x: 0
+                    y: 0
+                    id: image_down
+                    width: parent.width
+                    height: parent.height
+                    rotation: 180
+                    fillMode: Image.PreserveAspectFit
+                    source: "images/bouton_up.png"
+                }
+            }
+
+            Button {
+                id: button_left
+                x: 0
+                y: (parent.height-height)/2
+                width: parent.width/3
+                height: parent.height/3
+                //text: qsTr("Gauche")
+                onClicked: jeu.dep_gauche()
+
+
+                Image {
+                    x: 0
+                    y: 0
+                    id: image_left
+                    width: parent.width
+                    height: parent.height
+                    rotation: -90
+                    fillMode: Image.PreserveAspectFit
+                    source: "images/bouton_up.png"
+                }
+            }
+        }
+
+        Rectangle {
+            id: frame_retour
+            x: 0
+            y: (parent.height - height)/2
+            width: 164
+            height: 103
+            color: "#00000000"
+            enabled: true
+            focus: true
+
+            Button {
+                id: button_y
+                x: parent.width/2
+                y: 0
+                width: parent.width/2 - 2
+                height: parent.height
+                onClicked: jeu.suiv()
+                Image {
+                    id: image_y
+                    x: 0
+                    y: 0
+                    width: parent.width
+                    height: parent.height
+                    scale: 1
+                    mirror: true
+                    z: 0
+                    source: "images/retour.PNG"
+                    rotation: 0
+                    fillMode: Image.PreserveAspectFit
+                }
+            }
+
+            Button {
+                id: button_z
+                x: 0
+                y: 0
+                width: parent.width/2 -2
+                height: parent.height
+                onClicked: jeu.prec()
+                Image {
+                    id: image_z
+                    x: 0
+                    y: 0
+                    width: parent.width
+                    height: parent.height
+                    source: "images/retour.PNG"
+                    rotation: 0
+                    fillMode: Image.PreserveAspectFit
+                }
+            }
+
+        }
     }
 
 
+
+
 }
 
 
 
-/*##^##
-Designer {
-    D{i:2;anchors_width:100}D{i:4;anchors_x:2;anchors_y:7}D{i:6;anchors_width:100;anchors_x:9;anchors_y:"-6"}
-D{i:8;anchors_width:100;anchors_x:0;anchors_y:"-2"}D{i:10;anchors_x:"-4";anchors_y:4}
-D{i:12;anchors_x:"-8";anchors_y:1}D{i:14;anchors_x:"-6";anchors_y:7}D{i:16;anchors_x:"-6";anchors_y:1}
-D{i:18;anchors_x:0;anchors_y:10}D{i:20;anchors_x:4;anchors_y:19}D{i:22;anchors_x:"-4";anchors_y:8}
-D{i:24;anchors_x:7;anchors_y:13}D{i:26;anchors_x:8;anchors_y:19}D{i:28;anchors_x:1;anchors_y:26}
-D{i:30;anchors_x:16;anchors_y:14}D{i:32;anchors_x:16;anchors_y:17}D{i:46;anchors_height:200;anchors_width:200}
-}
-##^##*/
+

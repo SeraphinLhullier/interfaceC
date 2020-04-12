@@ -57,7 +57,7 @@ void Jeu::sauvegarder(){
 
     changed();
 
-    std::cout <<std::endl << hist.size() << "     " << pos;
+    // std::cout <<std::endl << hist.size() << "     " << pos;
 }
 
 void Jeu::print()
@@ -264,7 +264,7 @@ void Jeu::prec(){
         pos--;
         copie(tab,hist[pos]);
         changed();
-        std::cout <<std::endl << hist.size() << "     " << pos;
+        // std::cout <<std::endl << hist.size() << "     " << pos;
     }
 }
 
@@ -274,7 +274,7 @@ void Jeu::suiv(){
         copie(tab,hist[pos]);
         changed();
 
-        std::cout <<std::endl << hist.size() << "     " << pos;
+        // std::cout <<std::endl << hist.size() << "     " << pos;
     }
 }
 
