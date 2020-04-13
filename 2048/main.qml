@@ -18,8 +18,8 @@ Window {
 
     Rectangle {
         id: board
-        width: 500/640*parent.width
-        height: width
+        width: 500
+        height: 500
         color: "#c17d11"
         radius: 10
         anchors.verticalCenterOffset: 100
@@ -921,8 +921,8 @@ Window {
         height: 60
         color: "#c17d11"
         radius: 10
-        anchors.verticalCenterOffset: -260
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.bottom: board.top
+        anchors.bottomMargin: 70
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
 
@@ -956,6 +956,9 @@ Window {
         width: 640
         height: 200
         color: "#00000000"
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: board.top
+        anchors.bottomMargin: 0
         clip: false
         opacity: 1
         visible: true
