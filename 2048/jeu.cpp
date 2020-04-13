@@ -3,6 +3,8 @@
 #include <iostream>
 #include <iomanip>
 
+using namespace std;
+
 Jeu::Jeu(int lignes, int colonnes, QObject *parent) : QObject(parent)
 {
     score=0;
@@ -40,6 +42,96 @@ void Jeu::copie(int **a, int **b){
     for (int i = 0 ; i < nb_lignes ; i++)
         for (int j = 0 ; j < nb_colonnes ; j++)
             a[i][j] = b[i][j];
+}
+
+void Jeu::sauver_partie() {
+    ofstream save;
+    string line;
+    line = "";
+    save.open("save.txt",ios::out | ios::trunc);
+
+    if (save.is_open())
+      {
+
+        save << nb_lignes << " ";
+        save << nb_colonnes << " ";
+        save << pos << " " << endl;
+        for (size_t p = 0; p<hist.size();p++) {
+            for (int i = 0 ; i< nb_lignes ; i++)
+                for (int j = 0; j< nb_colonnes ; j++)
+                    line += to_string(hist[p][i][j]) + " ";
+            line += to_string(hscore[p]);
+            save << line <<endl;
+            line = "";
+        }
+
+        save.close();
+      }
+
+      else cout << "Unable to open file";
+
+}
+
+
+void Jeu::charger_partie() {
+    string line;
+    string n;
+    ifstream save;
+    int i = 0;
+    save.open("save.txt", ios::in);
+    if (save.is_open())
+      {
+        getline(save,line);
+        n = "";
+        for (size_t k = 0; k < line.size(); k++)
+            if (line[k] == ' '){
+                if (i == 0) {
+                    nb_lignes = stoi(n);
+                    i++;
+                }
+                if (i==1) {
+                    nb_colonnes = stoi(n);
+                    i++;
+                }
+                if (i==2) {
+                    pos = stoull(n);
+                }
+            } else
+                n += line[k];
+
+        i = 0;
+        n = "";
+        hist.clear();
+        hscore.clear();
+        while ( getline (save,line) )
+        {
+            int** sauv;
+            sauv = new int* [nb_lignes];
+            for (int i = 0; i< nb_lignes; i++)
+                sauv[i]=new int[nb_colonnes];
+
+            for (size_t k = 0; k < line.size(); k++){
+                if (line[k] == ' ') {
+                    if (i == nb_lignes*nb_colonnes) {
+                        hscore.push_back(stoi(n));
+                        n = "";
+                        hist.push_back(sauv);
+                    }
+                    else {
+                        sauv[i/nb_colonnes][i%nb_colonnes] = stoi(n);
+                        n = "";
+                    }
+                } else
+                    n += line[k];
+            }
+        }
+        copie(tab,hist[pos]);
+        score = hscore[pos];
+        save.close();
+      }
+
+      else cout << "Unable to open file";
+
 }
 
 void Jeu::sauvegarder(){

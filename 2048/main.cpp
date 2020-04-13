@@ -13,7 +13,13 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     Jeu jeu(4,4);
-//    j.print();
+    jeu.print();
+    jeu.dep_droite();
+    jeu.print();
+    jeu.dep_droite();
+    jeu.print();
+    jeu.sauver_partie();
+    return 0;
 //    for (int i = 0 ; i<1000; i++){
 //        j.deplacer_droite();
 //        j.ajouter_tuile();
@@ -47,6 +53,5 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
     engine.rootContext()->setContextProperty("jeu", &jeu);
     engine.load(url);
-
     return app.exec();
 }

@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QString>
 #include <vector>
+#include <fstream>
 
 
 class Jeu : public QObject
@@ -51,6 +52,8 @@ public:
     Q_INVOKABLE void prec();
     Q_INVOKABLE void suiv();
     void copie(int** a, int** b);
+    Q_INVOKABLE void sauver_partie();
+    Q_INVOKABLE void charger_partie();
 
     QString readc11();
     QString readc12();
