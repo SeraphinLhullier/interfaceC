@@ -423,7 +423,7 @@ Window {
         Text {
             id: score
             color: "#ffffff"
-            text: qsTr("0")
+            text: jeu.scores
             font.bold: true
             anchors.fill: parent
             horizontalAlignment: Text.AlignHCenter

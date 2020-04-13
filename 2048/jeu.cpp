@@ -5,6 +5,7 @@
 
 Jeu::Jeu(int lignes, int colonnes, QObject *parent) : QObject(parent)
 {
+    score=0;
     nb_lignes = lignes;
     nb_colonnes = colonnes;
     pos = -1;
@@ -50,9 +51,11 @@ void Jeu::sauvegarder(){
     copie(sauv,tab);
     while (pos<hist.size()-1) {
         hist.pop_back();
+        hscore.pop_back();
     }
-
+    int newscore=score;
     hist.push_back(sauv);
+    hscore.push_back(newscore);
     pos++;
 
     changed();
@@ -157,6 +160,7 @@ void Jeu::deplacer_haut(){
             for (int j=0; j<nb_colonnes ; j++) {
                 if(tab[i][j] != 0 and tab[i][j]%2 == 0 and tab[i-1][j] == tab[i][j]) {
                     tab[i-1][j] = 2*tab[i][j]+1;
+                    score+=2*tab[i][j];
                     tab[i][j] = 0;
                 }
                 if(tab[i][j] != 0 and tab[i-1][j] == 0){
@@ -176,6 +180,7 @@ void Jeu::deplacer_bas(){
             for (int j=0; j<nb_colonnes ; j++) {
                 if(tab[i][j] != 0 and tab[i][j]%2 == 0 and tab[i+1][j] == tab[i][j]) {
                     tab[i+1][j] = 2*tab[i][j]+1;
+                    score+=2*tab[i][j];
                     tab[i][j] = 0;
                 }
                 if(tab[i][j] != 0 and tab[i+1][j] == 0){
@@ -195,6 +200,7 @@ void Jeu::deplacer_gauche(){
             for (int j=1; j<nb_colonnes ; j++) {
                 if(tab[i][j] != 0 and tab[i][j]%2 == 0 and tab[i][j-1] == tab[i][j]) {
                     tab[i][j-1] = 2*tab[i][j]+1;
+                    score+=2*tab[i][j];
                     tab[i][j] = 0;
                 }
                 if(tab[i][j] != 0 and tab[i][j-1] == 0){
@@ -214,6 +220,7 @@ void Jeu::deplacer_droite(){
             for (int j=nb_colonnes-2; j>=0 ; j--) {
                 if(tab[i][j] != 0 and tab[i][j]%2 == 0 and tab[i][j+1] == tab[i][j]) {
                     tab[i][j+1] = 2*tab[i][j]+1;
+                    score+=2*tab[i][j];
                     tab[i][j] = 0;
                 }
                 if(tab[i][j] != 0 and tab[i][j+1] == 0){
@@ -263,6 +270,7 @@ void Jeu::prec(){
     if (pos >0){
         pos--;
         copie(tab,hist[pos]);
+        score=hscore[pos];
         changed();
         // std::cout <<std::endl << hist.size() << "     " << pos;
     }
@@ -272,6 +280,7 @@ void Jeu::suiv(){
     if (pos < hist.size()-1){
         pos++;
         copie(tab,hist[pos]);
+        score=hscore[pos];
         changed();
 
         // std::cout <<std::endl << hist.size() << "     " << pos;
@@ -385,4 +394,8 @@ QString Jeu::readc44(){
         return QString::number(get_tab(4,4));
     else
         return QString("");
+}
+
+QString Jeu::readscore(){
+    return QString::number(score);
 }

@@ -29,6 +29,7 @@ public:
     Q_PROPERTY(QString c42 READ readc42 NOTIFY changed)
     Q_PROPERTY(QString c43 READ readc43 NOTIFY changed)
     Q_PROPERTY(QString c44 READ readc44 NOTIFY changed)
+    Q_PROPERTY(QString scores READ readscore NOTIFY changed)
 
 
     Q_INVOKABLE void print();
@@ -67,6 +68,7 @@ public:
     QString readc42();
     QString readc43();
     QString readc44();
+    QString readscore();
 
 signals:
     void changed();
@@ -75,8 +77,10 @@ private:
     int **tab;
     size_t pos;
     std::vector<int**> hist;
+    std::vector<int> hscore;
     int nb_lignes;
     int nb_colonnes;
+    int score;
 
 
 };
