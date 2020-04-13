@@ -8,10 +8,11 @@
 #include <QtQml>
 int main(int argc, char *argv[])
 {
-    srand(time(NULL));
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    srand(time(NULL)); // Permet d'initialiser le pseudo aléatoire utilisé par le programme
 
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
+
     Jeu jeu(4,4);
 
     QQmlApplicationEngine engine;

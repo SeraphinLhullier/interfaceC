@@ -15,8 +15,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         jeu.cpp \
-        main.cpp \
-        tuile.cpp
+        main.cpp
 
 RESOURCES += qml.qrc
 
@@ -35,5 +34,4 @@ DISTFILES += \
     Tuile.qml
 
 HEADERS += \
-    jeu.h \
-    tuile.h
+    jeu.h

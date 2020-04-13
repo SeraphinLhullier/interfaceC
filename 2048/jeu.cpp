@@ -7,7 +7,13 @@ using namespace std;
 
 Jeu::Jeu(int lignes, int colonnes, QObject *parent) : QObject(parent)
 {
-    score=0;
+
+    /*
+     * On initialise les attributs, pos est initialisée à -1 pour le bon fonctionnement de la méthode sauvegarder
+     * On ajoute 2 tuiles au plateau pour le début de la partie et on sauvegarde le plateau
+     */
+
+    score = 0;
     nb_lignes = lignes;
     nb_colonnes = colonnes;
     pos = -1;
@@ -39,12 +45,23 @@ Jeu::~Jeu() {
 
 
 void Jeu::copie(int **a, int **b){
+    /*
+     * Fonction permettant de recopier facilement le damier b dans le damier a
+     */
+
+
     for (int i = 0 ; i < nb_lignes ; i++)
         for (int j = 0 ; j < nb_colonnes ; j++)
             a[i][j] = b[i][j];
 }
 
 void Jeu::sauver_partie() {
+
+    /*
+     * Permet de sauvegarder l'état de la partie (historique compris) dans un fichier texte
+     */
+
+
     ofstream save;
     string line;
     line = "";
@@ -52,16 +69,18 @@ void Jeu::sauver_partie() {
 
     if (save.is_open())
       {
-
         save << nb_lignes << " ";
         save << nb_colonnes << " ";
         save << pos << " " << endl;
-        for (size_t p = 0; p<hist.size();p++) {
-            for (int i = 0 ; i< nb_lignes ; i++)
+        for (size_t p = 0 ; p < hist.size() ; p++) {
+            for (int i = 0 ; i < nb_lignes ; i++)
                 for (int j = 0; j< nb_colonnes ; j++)
                     line += to_string(hist[p][i][j]) + " ";
+
             line += to_string(hscore[p])+" ";
+
             save << line <<endl;
+
             line = "";
         }
 
@@ -74,6 +93,11 @@ void Jeu::sauver_partie() {
 
 
 void Jeu::charger_partie() {
+    /*
+     * Permet de recharger la partie à partir des données stockées dans le fichier 'save.txt'
+     */
+
+
     string line;
     string n;
     ifstream save;
@@ -139,6 +163,12 @@ void Jeu::charger_partie() {
 }
 
 void Jeu::sauvegarder(){
+    /*
+     * Fonction utilisée à chaque étape pour créer l'historique en sauvegardant le damier et le score
+     * Si le joueur recommence à jouer à partir d'un coup précédent, la fonction supprime tous les coups ultérieur à ce coup pour recommencer l'historique
+     */
+
+
     int** sauv;
     sauv = new int* [nb_lignes];
     for (int i = 0; i< nb_lignes; i++)
@@ -155,24 +185,30 @@ void Jeu::sauvegarder(){
     pos++;
 
     changed();
-
-    // std::cout <<std::endl << hist.size() << "     " << pos;
 }
 
 void Jeu::print()
 {
-    std::cout << std::endl;
+    /*
+     * Fonction permettant d'afficher le damier dans la console (utilisée pour les premier tests)
+     */
+
+    cout << endl;
     for (int i=0; i < nb_lignes; i++)
     {
         for (int j=0; j < nb_colonnes; j++)
         {
-            std::cout <<std::setw(5) << tab[i][j];
+            cout <<setw(5) << tab[i][j];
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 }
 
 void Jeu::ajouter_tuile() {
+
+    /*
+     * Permet d'ajouter une tuile de valeur 2 ou 4 (1 chance sur 5) dans une case vide du damier
+     */
 
     int nb_vide =0;
     for (int i = 0; i < nb_lignes; i++)
@@ -206,8 +242,8 @@ void Jeu::ajouter_tuile() {
         cases_valides = NULL;
 
 
-    } catch (const std::out_of_range& oor) {
-        std::cerr << "Out of Range error: " << oor.what() << '\n';
+    } catch (const out_of_range& oor) {
+        cerr << "Out of Range error: " << oor.what() << '\n';
       }
 
 
@@ -215,6 +251,11 @@ void Jeu::ajouter_tuile() {
 }
 
 bool Jeu::verifier_haut(){
+    /*
+     * Permet de vérifier qu'il est possible de déplacer au moins une tuile vers le haut
+     */
+
+
     for (int i = 1; i < nb_lignes;i++)
         for (int j = 0; j < nb_colonnes; j++)
             if(tab[i][j] != 0 and (tab[i-1][j] == tab[i][j] or tab[i-1][j] == 0))
@@ -251,6 +292,15 @@ bool Jeu::verifier_droite(){
 }
 
 void Jeu::deplacer_haut(){
+    /*
+     * Permet d'effectuer le déplacement des tuiles vers le haut en effectuant si besoin les fusions de tuiles
+     * Pour éviter qu'une tuile soit fusionner plusieurs fois pendant le meme mouvement (par exemple avec l'alignement suivant 4-4-8)
+     * quand des tuiles sont fuissionnées on ajoute 1 pour que le chiffre qu'elle comporte soit impair, les tuiles impaires ne peuvent plus fusionner ensuite
+     * A la fin du déplacement, on retranche 1 à toutes les tuiles impaires pour avoir leur vraie valeur
+     */
+
+
+
     for (int iter = 0; iter<nb_lignes-1;iter++)
         for (int i=1 ; i<nb_lignes ; i++)
             for (int j=0; j<nb_colonnes ; j++) {
@@ -331,6 +381,11 @@ void Jeu::deplacer_droite(){
 }
 
 void Jeu::dep_bas(){
+    /*
+     * Fonction regroupant la vérifiaction de la possibilité de mouvement, le déplacement, l'ajout d'une nouvelle tuile et l'ajout de l'état dans l'historique
+     */
+
+
     if(verifier_bas()){
         deplacer_bas();
         ajouter_tuile();
@@ -363,38 +418,51 @@ void Jeu::dep_gauche(){
 }
 
 void Jeu::prec(){
+    /*
+     * Fonction permettant de charger les données de l'historique en revenant en arriere
+     */
+
     if (pos >0){
         pos--;
         copie(tab,hist[pos]);
         score=hscore[pos];
         changed();
-        // std::cout <<std::endl << hist.size() << "     " << pos;
     }
 }
 
-void Jeu::suiv(){
+void Jeu::suiv(){    
+    /*
+     * Fonction permettant de charger les données de l'historique en rétablissant les coups annulés
+     */
+
     if (pos < hist.size()-1){
         pos++;
         copie(tab,hist[pos]);
         score=hscore[pos];
         changed();
 
-        // std::cout <<std::endl << hist.size() << "     " << pos;
     }
 }
 
 int Jeu::get_tab(int x,int y){
+    /*
+     * permet d'acceder aux éléments de tab en dehors de la classe
+     */
+
     return tab[x-1][y-1];
 }
 
 
 QString Jeu::readc11(){
+    /*
+     * Permet de dialoguer avec le QML pour communiquer ce qu'il faut afficher dans les cases
+     */
+
     if(get_tab(1,1)!=0)
         return QString::number(get_tab(1,1));
     else
         return QString("");
 }
-
 QString Jeu::readc12(){
     if(get_tab(1,2)!=0)
         return QString::number(get_tab(1,2));
@@ -413,14 +481,12 @@ QString Jeu::readc14(){
     else
         return QString("");
 }
-
 QString Jeu::readc21(){
     if(get_tab(2,1)!=0)
         return QString::number(get_tab(2,1));
     else
         return QString("");
 }
-
 QString Jeu::readc22(){
     if(get_tab(2,2)!=0)
         return QString::number(get_tab(2,2));
@@ -439,14 +505,12 @@ QString Jeu::readc24(){
     else
         return QString("");
 }
-
 QString Jeu::readc31(){
     if(get_tab(3,1)!=0)
         return QString::number(get_tab(3,1));
     else
         return QString("");
 }
-
 QString Jeu::readc32(){
     if(get_tab(3,2)!=0)
         return QString::number(get_tab(3,2));
@@ -465,14 +529,12 @@ QString Jeu::readc34(){
     else
         return QString("");
 }
-
 QString Jeu::readc41(){
     if(get_tab(4,1)!=0)
         return QString::number(get_tab(4,1));
     else
         return QString("");
 }
-
 QString Jeu::readc42(){
     if(get_tab(4,2)!=0)
         return QString::number(get_tab(4,2));
@@ -491,7 +553,6 @@ QString Jeu::readc44(){
     else
         return QString("");
 }
-
 QString Jeu::readscore(){
     return QString::number(score);
 }

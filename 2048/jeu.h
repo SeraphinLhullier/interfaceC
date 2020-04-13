@@ -48,12 +48,14 @@ public:
     Q_INVOKABLE bool verifier_haut();
     Q_INVOKABLE bool verifier_gauche();
     Q_INVOKABLE bool verifier_droite();
-    void sauvegarder();
     Q_INVOKABLE void prec();
     Q_INVOKABLE void suiv();
-    void copie(int** a, int** b);
     Q_INVOKABLE void sauver_partie();
     Q_INVOKABLE void charger_partie();
+
+    void sauvegarder();
+    void copie(int** a, int** b);
+
 
     QString readc11();
     QString readc12();
@@ -75,6 +77,7 @@ public:
 
 signals:
     void changed();
+    void fin_partie();
 
 private:
     int **tab;

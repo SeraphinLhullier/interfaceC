@@ -15,6 +15,7 @@ Window {
     maximumHeight: height
     maximumWidth: width
 
+
     MenuBar{
         Menu{
             title: qsTr("&File")
