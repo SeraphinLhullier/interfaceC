@@ -188,6 +188,10 @@ void Jeu::sauvegarder(){
 }
 
 void Jeu::recommencer(){
+    /*
+     * Fonction permettant de faire une nouvelle partie, fait exactement la même chose que le constructeur sans le nb de lignes et colonnes
+    */
+
     hist.clear();
     hscore.clear();
     score = 0;

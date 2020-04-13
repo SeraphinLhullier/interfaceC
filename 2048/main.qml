@@ -17,7 +17,7 @@ Window {
 
     MenuBar{
         Menu{
-            title: qsTr("&File")
+            title: qsTr("&Menu")
             MenuItem {
                 text: "Nouvelle partie..."
                 onTriggered: {jeu.recommencer()
