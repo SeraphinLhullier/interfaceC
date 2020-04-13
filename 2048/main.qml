@@ -15,19 +15,21 @@ Window {
     maximumHeight: height
     maximumWidth: width
 
-
     MenuBar{
         Menu{
             title: qsTr("&File")
             MenuItem {
                 text: "Sauvegarder..."
-                onTriggered: jeu.sauver_partie()
+                onTriggered: {jeu.sauver_partie()
+                    boutons.forceActiveFocus()}
             }
 
             MenuItem {
                 text: "Charger..."
-                onTriggered: jeu.charger_partie()
+                onTriggered: {jeu.charger_partie()
+                    boutons.forceActiveFocus()}
             }
+            onClosed: boutons.forceActiveFocus()
         }
     }
 
@@ -1768,7 +1770,7 @@ Window {
             anchors.horizontalCenterOffset: -165
             anchors.horizontalCenter: parent.horizontalCenter
             enabled: true
-            focus: true
+            //focus: true
 
             Button {
                 id: button_y
@@ -1813,6 +1815,7 @@ Window {
 
         }
     }
+
 
 
 
