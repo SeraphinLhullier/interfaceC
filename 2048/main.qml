@@ -19,6 +19,11 @@ Window {
         Menu{
             title: qsTr("&File")
             MenuItem {
+                text: "Nouvelle partie..."
+                onTriggered: {jeu.recommencer()
+                    boutons.forceActiveFocus()}
+            }
+            MenuItem {
                 text: "Sauvegarder..."
                 onTriggered: {jeu.sauver_partie()
                     boutons.forceActiveFocus()}

@@ -187,6 +187,26 @@ void Jeu::sauvegarder(){
     changed();
 }
 
+void Jeu::recommencer(){
+    hist.clear();
+    hscore.clear();
+    score = 0;
+    pos = -1;
+    tab = new int* [nb_lignes];
+    for (int i = 0; i< nb_lignes; i++)
+        tab[i]=new int[nb_colonnes];
+
+    for (int i = 0 ; i < nb_lignes ; i++)
+        for (int j = 0 ; j < nb_colonnes ; j++)
+            tab[i][j] = 0;
+
+    ajouter_tuile();
+    ajouter_tuile();
+
+    sauvegarder();
+}
+
+
 void Jeu::print()
 {
     /*

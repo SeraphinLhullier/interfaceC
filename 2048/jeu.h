@@ -52,6 +52,7 @@ public:
     Q_INVOKABLE void suiv();
     Q_INVOKABLE void sauver_partie();
     Q_INVOKABLE void charger_partie();
+    Q_INVOKABLE void recommencer();
 
     void sauvegarder();
     void copie(int** a, int** b);
@@ -80,10 +81,10 @@ signals:
     void fin_partie();
 
 private:
-    int **tab;
-    size_t pos;
-    std::vector<int**> hist;
-    std::vector<int> hscore;
+    int **tab; //Tableau des tuiles
+    size_t pos; //Numéro du tour joué
+    std::vector<int**> hist; //Historique des coups joués
+    std::vector<int> hscore; //Historique des scores
     int nb_lignes;
     int nb_colonnes;
     int score;
