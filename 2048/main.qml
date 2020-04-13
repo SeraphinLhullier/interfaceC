@@ -408,6 +408,10 @@ Window {
         height: 60
         color: "#c17d11"
         radius: 10
+        anchors.verticalCenterOffset: -260
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenterOffset: 0
+        anchors.horizontalCenter: parent.horizontalCenter
 
         Text {
             id: scoretext
@@ -473,6 +477,9 @@ Window {
             width: 176
             height: 176
             color: "#00000000"
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenterOffset: 160
+            anchors.horizontalCenter: parent.horizontalCenter
             //hoverEnabled: true
             enabled: true
             //focus: true
@@ -570,6 +577,9 @@ Window {
             width: 164
             height: 103
             color: "#00000000"
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenterOffset: -165
+            anchors.horizontalCenter: parent.horizontalCenter
             enabled: true
             focus: true
 
