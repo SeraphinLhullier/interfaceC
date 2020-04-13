@@ -48,31 +48,39 @@ Window {
                 anchors.fill: parent
                 font.pixelSize: 40
                 text: jeu.c11
+                Behavior on text {
+                    RotationAnimation{
+                        target: case11
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr11
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl11
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu11
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd11
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr11
+//                running: t11.t
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl11
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu11
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd11
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -95,31 +103,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case12
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr12
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl12
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu12
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd12
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr12
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl12
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu12
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd12
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
 
         }
 
@@ -143,31 +159,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case13
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr13
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl13
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu13
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd13
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr13
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl13
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu13
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd13
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -191,31 +215,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case14
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr14
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl14
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu14
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd14
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr14
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl14
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu14
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd14
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -238,31 +270,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case21
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr21
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl21
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu21
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd21
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr21
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl21
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu21
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd21
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -285,31 +325,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case22
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr22
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl22
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu22
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd22
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr22
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl22
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu22
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd22
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -332,31 +380,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case23
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr23
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl23
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu23
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd23
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr23
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl23
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu23
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd23
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -379,31 +435,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case24
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr24
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl24
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu24
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd24
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr24
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl24
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu24
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd24
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -426,31 +490,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case31
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr31
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl31
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu31
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd31
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr31
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl31
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu31
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd31
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -473,31 +545,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case32
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr32
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl32
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu32
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd32
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr32
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl32
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu32
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd32
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -520,31 +600,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case33
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr33
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl33
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu33
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd33
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr33
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl33
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu33
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd33
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -567,31 +655,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case34
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr34
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl34
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu34
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd34
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr34
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl34
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu34
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd34
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -614,31 +710,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case41
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr41
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl41
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu41
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd41
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr41
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl41
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu41
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd41
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -661,31 +765,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case42
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr42
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl42
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu42
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd42
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr42
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl42
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu42
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd42
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -708,31 +820,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case43
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr43
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl43
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu43
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd43
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr43
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl43
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu43
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd43
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
         Rectangle {
@@ -755,31 +875,39 @@ Window {
                 anchors.fill: parent
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
+                Behavior on text {
+                    RotationAnimation{
+                        target: case44
+                        from:0;to:360
+                        alwaysRunToEnd: true
+
+                    }
+                }
             }
-            RotationAnimation on rotation {
-                id: animr44
-                running: button_right.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animl44
-                running: button_left.pressed
-                from:0; to:-360
-                alwaysRunToEnd: true
-            }
-            RotationAnimation on rotation {
-                id: animu44
-                running:button_up.pressed
-                from: 0; to:360
-                alwaysRunToEnd:true
-            }
-            RotationAnimation on rotation {
-                id: animd44
-                running: button_down.pressed
-                from: 0; to:-360
-                alwaysRunToEnd:true
-            }
+//            RotationAnimation on rotation {
+//                id: animr44
+//                running: button_right.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animl44
+//                running: button_left.pressed
+//                from:0; to:-360
+//                alwaysRunToEnd: true
+//            }
+//            RotationAnimation on rotation {
+//                id: animu44
+//                running:button_up.pressed
+//                from: 0; to:360
+//                alwaysRunToEnd:true
+//            }
+//            RotationAnimation on rotation {
+//                id: animd44
+//                running: button_down.pressed
+//                from: 0; to:-360
+//                alwaysRunToEnd:true
+//            }
         }
 
 
@@ -840,79 +968,79 @@ Window {
             switch (event.key){
             case Qt.Key_Up:
                 jeu.dep_haut();
-                animu11.start();
-                animu12.start();
-                animu13.start();
-                animu14.start();
-                animu21.start();
-                animu22.start();
-                animu23.start();
-                animu24.start();
-                animu31.start();
-                animu32.start();
-                animu33.start();
-                animu34.start();
-                animu41.start();
-                animu42.start();
-                animu43.start();
-                animu44.start();
+//                animu11.start();
+//                animu12.start();
+//                animu13.start();
+//                animu14.start();
+//                animu21.start();
+//                animu22.start();
+//                animu23.start();
+//                animu24.start();
+//                animu31.start();
+//                animu32.start();
+//                animu33.start();
+//                animu34.start();
+//                animu41.start();
+//                animu42.start();
+//                animu43.start();
+//                animu44.start();
                 break;
             case Qt.Key_Down:
                 jeu.dep_bas();
-                animd11.start();
-                animd12.start();
-                animd13.start();
-                animd14.start();
-                animd21.start();
-                animd22.start();
-                animd23.start();
-                animd24.start();
-                animd31.start();
-                animd32.start();
-                animd33.start();
-                animd34.start();
-                animd41.start();
-                animd42.start();
-                animd43.start();
-                animd44.start();
+//                animd11.start();
+//                animd12.start();
+//                animd13.start();
+//                animd14.start();
+//                animd21.start();
+//                animd22.start();
+//                animd23.start();
+//                animd24.start();
+//                animd31.start();
+//                animd32.start();
+//                animd33.start();
+//                animd34.start();
+//                animd41.start();
+//                animd42.start();
+//                animd43.start();
+//                animd44.start();
                 break;
             case Qt.Key_Left:
                 jeu.dep_gauche();
-                animl11.start();
-                animl12.start();
-                animl13.start();
-                animl14.start();
-                animl21.start();
-                animl22.start();
-                animl23.start();
-                animl24.start();
-                animl31.start();
-                animl32.start();
-                animl33.start();
-                animl34.start();
-                animl41.start();
-                animl42.start();
-                animl43.start();
-                animl44.start();
+//                animl11.start();
+//                animl12.start();
+//                animl13.start();
+//                animl14.start();
+//                animl21.start();
+//                animl22.start();
+//                animl23.start();
+//                animl24.start();
+//                animl31.start();
+//                animl32.start();
+//                animl33.start();
+//                animl34.start();
+//                animl41.start();
+//                animl42.start();
+//                animl43.start();
+//                animl44.start();
                 break;
             case Qt.Key_Right:
                 jeu.dep_droite();
-                animd11.start();
-                animd12.start();
-                animd13.start();
-                animd14.start();
-                animd21.start();
-                animd22.start();
-                animd23.start();
-                animd24.start();
-                animd31.start();
-                animd32.start();
-                animd33.start();
-                animd34.start();
-                animd41.start();
-                animd42.start();
-                animd43.start();
-                animd44.start();
+//                animd11.start();
+//                animd12.start();
+//                animd13.start();
+//                animd14.start();
+//                animd21.start();
+//                animd22.start();
+//                animd23.start();
+//                animd24.start();
+//                animd31.start();
+//                animd32.start();
+//                animd33.start();
+//                animd34.start();
+//                animd41.start();
+//                animd42.start();
+//                animd43.start();
+//                animd44.start();
                 break;
             }
         }
