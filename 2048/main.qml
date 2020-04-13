@@ -15,6 +15,20 @@ Window {
     maximumHeight: height
     maximumWidth: width
 
+    MenuBar{
+        Menu{
+            title: qsTr("&File")
+            MenuItem {
+                text: "Sauvegarder..."
+                onTriggered: jeu.sauver_partie()
+            }
+
+            MenuItem {
+                text: "Charger..."
+                onTriggered: jeu.charger_partie()
+            }
+        }
+    }
 
     Rectangle {
         id: board
@@ -1797,27 +1811,6 @@ Window {
             }
 
         }
-    }
-
-    Button {
-        id: charger
-        x: parent.width/2
-        y: 0
-        width: parent.width/2
-        height: 50
-        text: "charger"
-        onClicked: jeu.charger_partie()
-
-    }
-
-    Button {
-        id: sauvegarder
-        x: 0
-        y: 0
-        width: parent.width/2
-        height: 50
-        text: "sauvegarder"
-        onClicked: jeu.sauver_partie()
     }
 
 

@@ -23,5 +23,6 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
     engine.rootContext()->setContextProperty("jeu", &jeu);
     engine.load(url);
+
     return app.exec();
 }
