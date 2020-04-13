@@ -60,7 +60,7 @@ void Jeu::sauver_partie() {
             for (int i = 0 ; i< nb_lignes ; i++)
                 for (int j = 0; j< nb_colonnes ; j++)
                     line += to_string(hist[p][i][j]) + " ";
-            line += to_string(hscore[p]);
+            line += to_string(hscore[p])+" ";
             save << line <<endl;
             line = "";
         }
@@ -96,6 +96,7 @@ void Jeu::charger_partie() {
                 if (i==2) {
                     pos = stoull(n);
                 }
+                n = "";
             } else
                 n += line[k];
 
@@ -103,12 +104,12 @@ void Jeu::charger_partie() {
         n = "";
         hist.clear();
         hscore.clear();
-        while ( getline (save,line) )
+        while (getline (save,line))
         {
             int** sauv;
             sauv = new int* [nb_lignes];
-            for (int i = 0; i< nb_lignes; i++)
-                sauv[i]=new int[nb_colonnes];
+            for (int l = 0; l< nb_lignes; l++)
+                sauv[l]=new int[nb_colonnes];
 
             for (size_t k = 0; k < line.size(); k++){
                 if (line[k] == ' ') {
@@ -116,17 +117,20 @@ void Jeu::charger_partie() {
                         hscore.push_back(stoi(n));
                         n = "";
                         hist.push_back(sauv);
+                        i=0;
                     }
                     else {
                         sauv[i/nb_colonnes][i%nb_colonnes] = stoi(n);
                         n = "";
+                        i++;
                     }
                 } else
                     n += line[k];
             }
         }
-        copie(tab,hist[pos]);
         score = hscore[pos];
+        copie(tab,hist[pos]);
+        changed();
         save.close();
       }
 

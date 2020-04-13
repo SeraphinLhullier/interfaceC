@@ -1076,6 +1076,27 @@ Window {
         }
     }
 
+    Button {
+        id: charger
+        x: parent.width/2
+        y: 0
+        width: parent.width/2
+        height: 50
+        text: "charger"
+        onClicked: jeu.charger_partie()
+
+    }
+
+    Button {
+        id: sauvegarder
+        x: 0
+        y: 0
+        width: parent.width/2
+        height: 50
+        text: "sauvegarder"
+        onClicked: jeu.sauver_partie()
+    }
+
 
 
 

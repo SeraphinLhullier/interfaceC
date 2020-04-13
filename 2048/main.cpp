@@ -13,36 +13,6 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     Jeu jeu(4,4);
-    jeu.print();
-    jeu.dep_droite();
-    jeu.print();
-    jeu.dep_droite();
-    jeu.print();
-    jeu.sauver_partie();
-    return 0;
-//    for (int i = 0 ; i<1000; i++){
-//        j.deplacer_droite();
-//        j.ajouter_tuile();
-//        std::cout << j.verifier_bas() << j.verifier_haut() << j.verifier_droite() << j.verifier_gauche() <<std::endl;
-//        if (j.verifier_bas() + j.verifier_haut() +j.verifier_droite() + j.verifier_gauche() == 0)
-//            break;
-//        j.deplacer_bas();
-//        j.ajouter_tuile();
-//        std::cout << j.verifier_bas() << j.verifier_haut() << j.verifier_droite() << j.verifier_gauche() <<std::endl;
-//        if (j.verifier_bas() + j.verifier_haut() +j.verifier_droite() + j.verifier_gauche() == 0)
-//            break;
-//        j.deplacer_gauche();
-//        j.ajouter_tuile();
-//        std::cout << j.verifier_bas() << j.verifier_haut() << j.verifier_droite() << j.verifier_gauche() <<std::endl;
-//        if (j.verifier_bas() + j.verifier_haut() +j.verifier_droite() + j.verifier_gauche() == 0)
-//            break;
-//        j.deplacer_haut();
-//        j.ajouter_tuile();
-//        std::cout << j.verifier_bas() << j.verifier_haut() << j.verifier_droite() << j.verifier_gauche() <<std::endl;
-//        if (j.verifier_bas() + j.verifier_haut() +j.verifier_droite() + j.verifier_gauche() == 0)
-//            break;
-//    }
-//    j.print();
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
