@@ -478,6 +478,9 @@ int Jeu::get_tab(int x,int y){
 }
 
 bool Jeu::victoire(){
+    /*
+     * Fonction qui vérifie si un 2048 a été fait pour la première fois et enregistre l'état de victoire si c'est le cas
+    */
     for(int i=0 ; i<nb_lignes ; i++)
         for(int j=0 ; j<nb_colonnes ; j++)
             if(get_tab(i+1,j+1)==2048 && !victory){

@@ -16,7 +16,7 @@ Window {
     maximumHeight: height
     maximumWidth: width
 
-    MenuBar{
+    MenuBar{ //Menu permettant de sauvegarder, charger et faire une nouvelle partie
         Menu{
             title: qsTr("&Menu")
             MenuItem {
@@ -60,7 +60,7 @@ Window {
         onAccepted: jeu.recommencer()
     }
 
-    Rectangle {
+    Rectangle { //Terrain de jeux avec les cases
         id: board
         width: 500
         height: 500
@@ -92,7 +92,7 @@ Window {
                 anchors.fill: parent
                 font.pixelSize: 40
                 text: jeu.c11
-                Behavior on text {
+                Behavior on text { //Rotation lors d'un changement de valeur pour une case
                     RotationAnimation{
                         target: case11
                         from:0;to:360
@@ -100,7 +100,7 @@ Window {
 
                     }
                 }
-                onTextChanged: {
+                onTextChanged: { //Changement de couleurs pour une cases
                     switch(t11.text){
                     case "":
                         case11.color="#f6dcb0";
@@ -142,30 +142,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr11
-//                running: t11.t
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl11
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu11
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd11
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -238,31 +214,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr12
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl12
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu12
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd12
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
-
         }
 
         Rectangle {
@@ -335,30 +286,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr13
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl13
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu13
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd13
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -432,30 +359,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr14
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl14
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu14
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd14
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -528,30 +431,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr21
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl21
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu21
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd21
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -624,30 +503,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr22
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl22
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu22
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd22
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -720,30 +575,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr23
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl23
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu23
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd23
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -816,30 +647,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr24
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl24
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu24
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd24
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -912,30 +719,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr31
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl31
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu31
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd31
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -1008,30 +791,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr32
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl32
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu32
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd32
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -1104,30 +863,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr33
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl33
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu33
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd33
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -1200,30 +935,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr34
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl34
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu34
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd34
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -1296,30 +1007,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr41
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl41
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu41
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd41
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -1392,30 +1079,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr42
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl42
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu42
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd42
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -1488,30 +1151,6 @@ Window {
 
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr43
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl43
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu43
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd43
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
 
         Rectangle {
@@ -1581,39 +1220,12 @@ Window {
                         case44.color="#c21d1d";
                         break;
                     }
-
                 }
             }
-//            RotationAnimation on rotation {
-//                id: animr44
-//                running: button_right.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animl44
-//                running: button_left.pressed
-//                from:0; to:-360
-//                alwaysRunToEnd: true
-//            }
-//            RotationAnimation on rotation {
-//                id: animu44
-//                running:button_up.pressed
-//                from: 0; to:360
-//                alwaysRunToEnd:true
-//            }
-//            RotationAnimation on rotation {
-//                id: animd44
-//                running: button_down.pressed
-//                from: 0; to:-360
-//                alwaysRunToEnd:true
-//            }
         }
-
-
     }
 
-    Rectangle {
+    Rectangle { //Panneau du score
         id: scoreboard
         x: 534
         y: 5
@@ -1649,7 +1261,7 @@ Window {
         }
     }
 
-    Rectangle {
+    Rectangle { //Zone contenant les boutons
         id: boutons
         x: 0
         y: 64
@@ -1667,7 +1279,7 @@ Window {
         enabled: true
 
         focus: true
-        Keys.onPressed: {
+        Keys.onPressed: { //Implémentation des touches directionnel du clavier
             switch (event.key){
             case Qt.Key_Up:
                 jeu.dep_haut();
@@ -1685,14 +1297,14 @@ Window {
             if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){ //Vérification de la défaite
                 diaglost.open()
             }
-            else if(jeu.victoire()){
+            else if(jeu.victoire()){ //Vérification de 2048
                 diagwin.open()
             }
         }
 
 
 
-        Rectangle {
+        Rectangle { //Ajout d'un support de souris en plus du clavier
             id: croix_dir
             x: parent.width-width
             y: (parent.height - height)/2
@@ -1702,9 +1314,7 @@ Window {
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenterOffset: 160
             anchors.horizontalCenter: parent.horizontalCenter
-            //hoverEnabled: true
             enabled: true
-            //focus: true
 
             Button {
                 id: button_up
@@ -1712,7 +1322,6 @@ Window {
                 y: 0
                 width: parent.width/3
                 height: parent.height/3
-                //text: qsTr("Haut")
                 onClicked: {jeu.dep_haut()
                     if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){
                         diaglost.open()
@@ -1735,7 +1344,6 @@ Window {
                 y: (parent.height-height)/2
                 width: parent.width/3
                 height: parent.height/3
-                //text: qsTr("Droite")
                 onClicked: {jeu.dep_droite()
                     if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){
                         diaglost.open()
@@ -1760,7 +1368,6 @@ Window {
                 y: parent.height-height
                 width: parent.width/3
                 height: parent.height/3
-                //text: qsTr("Bas")
                 onClicked: {jeu.dep_bas()
                     if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){
                         diaglost.open()
@@ -1784,7 +1391,6 @@ Window {
                 y: (parent.height-height)/2
                 width: parent.width/3
                 height: parent.height/3
-                //text: qsTr("Gauche")
                 onClicked: {jeu.dep_gauche()
                     if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){
                         diaglost.open()
@@ -1804,7 +1410,7 @@ Window {
             }
         }
 
-        Rectangle {
+        Rectangle { //Zone pour les touches de retour/avance dans les tours avec l'historique
             id: frame_retour
             x: 0
             y: (parent.height - height)/2
@@ -1815,7 +1421,6 @@ Window {
             anchors.horizontalCenterOffset: -165
             anchors.horizontalCenter: parent.horizontalCenter
             enabled: true
-            //focus: true
 
             Button {
                 id: button_y
@@ -1857,14 +1462,8 @@ Window {
                     fillMode: Image.PreserveAspectFit
                 }
             }
-
         }
     }
-
-
-
-
-
 }
 
 
