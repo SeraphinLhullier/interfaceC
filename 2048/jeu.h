@@ -53,6 +53,7 @@ public:
     Q_INVOKABLE void sauver_partie();
     Q_INVOKABLE void charger_partie();
     Q_INVOKABLE void recommencer();
+    Q_INVOKABLE bool victoire();
 
     void sauvegarder();
     void copie(int** a, int** b);
@@ -88,6 +89,7 @@ private:
     int nb_lignes;
     int nb_colonnes;
     int score;
+    bool victory;
 
 
 };

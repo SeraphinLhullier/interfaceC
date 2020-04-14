@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.3
+import QtQuick.Dialogs 1.2
 
 
 Window {
@@ -36,6 +37,27 @@ Window {
             }
             onClosed: boutons.forceActiveFocus()
         }
+    }
+
+    MessageDialog{ //Message de défaite
+        id:diaglost
+        title:"Dommage"
+        text: "Vous avez perdu... \n Vous pouvez annuler pour revenir d'un tour sur cette partie ou recommencer avec ok \n Recommencer ?"
+        icon: StandardIcon.Warning
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        modality: Qt.WindowModal
+        onAccepted: jeu.recommencer()
+        onRejected: jeu.prec()
+    }
+
+    MessageDialog{ //Message de victoire
+        id:diagwin
+        title:"Bravo !!"
+        text: "Vous avez atteint 2048 ! \n Vous pouvez appuyer sur cancel pour continuer à jouer sur cette partie \n Ou vous pouvez appuyer sur ok pour recommencer \n Recommencer ?"
+        icon: StandardIcon.NoIcon
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        modality: Qt.WindowModal
+        onAccepted: jeu.recommencer()
     }
 
     Rectangle {
@@ -1660,6 +1682,12 @@ Window {
                 jeu.dep_droite();
                 break;
             }
+            if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){ //Vérification de la défaite
+                diaglost.open()
+            }
+            else if(jeu.victoire()){
+                diagwin.open()
+            }
         }
 
 
@@ -1685,7 +1713,10 @@ Window {
                 width: parent.width/3
                 height: parent.height/3
                 //text: qsTr("Haut")
-                onClicked: jeu.dep_haut()
+                onClicked: {jeu.dep_haut()
+                    if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){
+                        diaglost.open()
+                    }}
 
                 Image {
                     x: 0
@@ -1705,7 +1736,10 @@ Window {
                 width: parent.width/3
                 height: parent.height/3
                 //text: qsTr("Droite")
-                onClicked: jeu.dep_droite()
+                onClicked: {jeu.dep_droite()
+                    if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){
+                        diaglost.open()
+                    }}
 
 
                 Image {
@@ -1727,7 +1761,10 @@ Window {
                 width: parent.width/3
                 height: parent.height/3
                 //text: qsTr("Bas")
-                onClicked: jeu.dep_bas()
+                onClicked: {jeu.dep_bas()
+                    if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){
+                        diaglost.open()
+                    }}
 
                 Image {
                     x: 0
@@ -1748,7 +1785,10 @@ Window {
                 width: parent.width/3
                 height: parent.height/3
                 //text: qsTr("Gauche")
-                onClicked: jeu.dep_gauche()
+                onClicked: {jeu.dep_gauche()
+                    if(!jeu.verifier_bas() && !jeu.verifier_droite() && !jeu.verifier_gauche() && !jeu.verifier_haut()){
+                        diaglost.open()
+                    }}
 
 
                 Image {

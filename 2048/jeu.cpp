@@ -17,6 +17,7 @@ Jeu::Jeu(int lignes, int colonnes, QObject *parent) : QObject(parent)
     nb_lignes = lignes;
     nb_colonnes = colonnes;
     pos = -1;
+    victory=false;
     tab = new int* [nb_lignes];
     for (int i = 0; i< nb_lignes; i++)
         tab[i]=new int[nb_colonnes];
@@ -97,7 +98,7 @@ void Jeu::charger_partie() {
      * Permet de recharger la partie à partir des données stockées dans le fichier 'save.txt'
      */
 
-
+    victory=false;
     string line;
     string n;
     ifstream save;
@@ -191,7 +192,7 @@ void Jeu::recommencer(){
     /*
      * Fonction permettant de faire une nouvelle partie, fait exactement la même chose que le constructeur sans le nb de lignes et colonnes
     */
-
+    victory=false;
     hist.clear();
     hscore.clear();
     score = 0;
@@ -476,6 +477,14 @@ int Jeu::get_tab(int x,int y){
     return tab[x-1][y-1];
 }
 
+bool Jeu::victoire(){
+    for(int i=0 ; i<nb_lignes ; i++)
+        for(int j=0 ; j<nb_colonnes ; j++)
+            if(get_tab(i+1,j+1)==2048 && !victory){
+                victory = true;
+                return true;}
+    return false;
+}
 
 QString Jeu::readc11(){
     /*
